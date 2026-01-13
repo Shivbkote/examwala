@@ -10,6 +10,26 @@
         rel="stylesheet">
 
     <style>
+
+
+
+    .custom-scrollbar::-webkit-scrollbar {
+        height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 10px;
+    }
+    /* For Firefox */
+    .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary) transparent;
+    }
+
         .savings-mini-card {
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(15, 23, 42, 0.4) 100%);
             backdrop-filter: blur(10px);
@@ -703,56 +723,59 @@
                     </div>
                 </div>
 
-                <div class="glass p-8 rounded-3xl glass-hover relative overflow-hidden group" id="card-junior">
-                    <h3 class="text-xl font-bold mb-2">CBSE Junior</h3>
-                    <p class="text-xs text-[var(--text-muted)] mb-6">CBSE (VI to X Standard)</p>
-                    <div class="text-4xl font-bold mb-6">₹1,770 <span
-                            class="text-sm font-normal text-gray-500">Total</span></div>
+              <div class="glass p-8 rounded-3xl glass-hover relative overflow-hidden group" id="card-junior">
+    <h3 class="text-xl font-bold mb-2">CBSE Junior</h3>
+    <p class="text-xs text-[var(--text-muted)] mb-6">CBSE (VI to X Standard)</p>
+    <div class="text-4xl font-bold mb-6">₹1,770 <span class="text-sm font-normal text-gray-500">Total</span></div>
 
-                    <button onclick="showSelection('junior')"
-                        class="w-full py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-all">
-                        Select Class & Buy
-                    </button>
+    <button onclick="showSelection('junior')"
+        class="w-full py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-all">
+        Select Class & Buy
+    </button>
 
-                    <div id="overlay-junior"
-                        class="absolute inset-0 bg-black/95 backdrop-blur-lg translate-y-full transition-all duration-300 p-6 flex flex-col justify-center items-center">
-                        <h4 class="text-lg font-bold mb-4">Select Your Standard</h4>
+    <div id="overlay-junior"
+        class="absolute inset-0 bg-black/95 backdrop-blur-lg translate-y-full transition-all duration-300 p-6 flex flex-col justify-center items-center">
+        <h4 class="text-lg font-bold mb-4">Select Your Standard</h4>
 
-                        <div
-                            class="flex overflow-x-auto w-full gap-4 pb-4 px-2 no-scrollbar snap-x cursor-grab active:cursor-grabbing">
-                            <div class="flex-shrink-0 snap-center">
-                                  <a href="https://examswala.org/learnmagica/userCourse.do?urlId=MzgwMw==" class="block w-full">
-                                <button
-                                    class="w-20 h-20 rounded-full border-2 border-[var(--primary)] flex items-center justify-center font-bold hover:bg-[var(--primary)] transition-all">VI</button></a>
-                            </div>
-                            <div class="flex-shrink-0 snap-center">
-                                 <a href="https://examswala.org/learnmagica/userCourse.do?urlId=MzgwNQ==">
-                                <button
-                                    class="w-20 h-20 rounded-full border-2 border-[var(--primary)] flex items-center justify-center font-bold hover:bg-[var(--primary)] transition-all">VII</button></a>
-                            </div>
-                            <div class="flex-shrink-0 snap-center">
-                                 <a href="https://examswala.org/learnmagica/userCourse.do?urlId=MzgwNA==" class="block w-full">
-                                <button
-                                    class="w-20 h-20 rounded-full border-2 border-[var(--primary)] flex items-center justify-center font-bold hover:bg-[var(--primary)] transition-all">VIII</button></a>
-                            </div>
-                            <div class="flex-shrink-0 snap-center">
-                                 <a href="https://examswala.org/learnmagica/userCourse.do?urlId=MzgwNg==" class="block w-full">
-                                <button
-                                    class="w-20 h-20 rounded-full border-2 border-[var(--primary)] flex items-center justify-center font-bold hover:bg-[var(--primary)] transition-all">IX</button></a>
-                            </div>
-                            <div class="flex-shrink-0 snap-center">
-                                 <a href="https://examswala.org/learnmagica/userCourse.do?urlId=MzgwNw==" class="block w-full">
-                                <button
-                                    class="w-20 h-20 rounded-full border-2 border-[var(--primary)] flex items-center justify-center font-bold hover:bg-[var(--primary)] transition-all">X</button></a>
-                            </div>
-                        </div>
+        <div id="junior-scroll-list"
+            class="flex flex-nowrap overflow-x-auto w-full gap-4 pb-4 px-2 snap-x cursor-grab active:cursor-grabbing custom-scrollbar">
+            <div class="flex-shrink-0 snap-center">
+                <a href="https://examswala.org/learnmagica/userCourse.do?urlId=MzgwMw==" class="block w-full">
+                    <button class="w-20 h-20 rounded-full border-2 border-[var(--primary)] flex items-center justify-center font-bold hover:bg-[var(--primary)] transition-all">VI</button>
+                </a>
+            </div>
+            <div class="flex-shrink-0 snap-center">
+                <a href="https://examswala.org/learnmagica/userCourse.do?urlId=MzgwNQ==">
+                    <button class="w-20 h-20 rounded-full border-2 border-[var(--primary)] flex items-center justify-center font-bold hover:bg-[var(--primary)] transition-all">VII</button>
+                </a>
+            </div>
+            <div class="flex-shrink-0 snap-center">
+                <a href="https://examswala.org/learnmagica/userCourse.do?urlId=MzgwNA==" class="block w-full">
+                    <button class="w-20 h-20 rounded-full border-2 border-[var(--primary)] flex items-center justify-center font-bold hover:bg-[var(--primary)] transition-all">VIII</button>
+                </a>
+            </div>
+            <div class="flex-shrink-0 snap-center">
+                <a href="https://examswala.org/learnmagica/userCourse.do?urlId=MzgwNg==" class="block w-full">
+                    <button class="w-20 h-20 rounded-full border-2 border-[var(--primary)] flex items-center justify-center font-bold hover:bg-[var(--primary)] transition-all">IX</button>
+                </a>
+            </div>
+            <div class="flex-shrink-0 snap-center">
+                <a href="https://examswala.org/learnmagica/userCourse.do?urlId=MzgwNw==" class="block w-full">
+                    <button class="w-20 h-20 rounded-full border-2 border-[var(--primary)] flex items-center justify-center font-bold hover:bg-[var(--primary)] transition-all">X</button>
+                </a>
+            </div>
+        </div>
 
-                        <p class="text-[10px] text-gray-400 mt-2 mb-4 uppercase tracking-widest">Swipe for more →</p>
+        <p class="text-[10px] text-gray-400 mt-2 mb-4 uppercase tracking-widest">Scroll or Swipe →</p>
 
-                        <button onclick="showSelection('junior', false)"
-                            class="text-xs text-gray-400 hover:text-white underline transition-colors">Cancel</button>
-                    </div>
-                </div>
+        <button onclick="showSelection('junior', false)"
+            class="text-xs text-gray-400 hover:text-white underline transition-colors">Cancel</button>
+    </div>
+</div>
+
+
+
+                
 
                 <div class="glass p-8 rounded-3xl glass-hover relative overflow-hidden group" id="card-state">
                     <h3 class="text-xl font-bold mb-2">State Board</h3>
@@ -1006,7 +1029,27 @@
         window.addEventListener('resize', autoScrollCarousel);
     </script>
 
+    <!-- <script>
+        function showSelection(type, isShowing = true) {
+            const overlay = document.getElementById(`overlay-${type}`);
+            if (isShowing) {
+                overlay.classList.remove('translate-y-full');
+                overlay.classList.add('translate-y-0');
+            } else {
+                overlay.classList.remove('translate-y-0');
+                overlay.classList.add('translate-y-full');
+            }
+        }
 
+        // Optional: Close overlay if clicking outside the buttons
+        document.addEventListener('click', (e) => {
+            const cbseCard = document.getElementById('card-cbse');
+            const stateCard = document.getElementById('card-state');
+
+            if (!cbseCard.contains(e.target)) showSelection('cbse', false);
+            if (!stateCard.contains(e.target)) showSelection('state', false);
+        });
+    </script> -->
 
     <script>
         function showSelection(type, isShowing = true) {
@@ -1021,7 +1064,19 @@
         }
     </script>
 
-</body>
+    <script>
+    // Keep your existing showSelection function here
+    
+    // Desktop Scroll Logic
+    const scrollContainer = document.getElementById('junior-scroll-list');
+    
+    scrollContainer.addEventListener('wheel', (evt) => {
+        evt.preventDefault();
+        // Move the container horizontally based on vertical scroll
+        scrollContainer.scrollLeft += evt.deltaY;
+    });
+</script>
 
+</body>
 
 </html>
