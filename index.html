@@ -1006,27 +1006,7 @@
         window.addEventListener('resize', autoScrollCarousel);
     </script>
 
-    <script>
-        function showSelection(type, isShowing = true) {
-            const overlay = document.getElementById(`overlay-${type}`);
-            if (isShowing) {
-                overlay.classList.remove('translate-y-full');
-                overlay.classList.add('translate-y-0');
-            } else {
-                overlay.classList.remove('translate-y-0');
-                overlay.classList.add('translate-y-full');
-            }
-        }
 
-        // Optional: Close overlay if clicking outside the buttons
-        document.addEventListener('click', (e) => {
-            const cbseCard = document.getElementById('card-cbse');
-            const stateCard = document.getElementById('card-state');
-
-            if (!cbseCard.contains(e.target)) showSelection('cbse', false);
-            if (!stateCard.contains(e.target)) showSelection('state', false);
-        });
-    </script>
 
     <script>
         function showSelection(type, isShowing = true) {
@@ -1042,5 +1022,6 @@
     </script>
 
 </body>
+
 
 </html>
